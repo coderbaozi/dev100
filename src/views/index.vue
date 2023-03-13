@@ -2,16 +2,6 @@
 import Thefooter from "@/components/Thefooter.vue"
 import Card from "@/components/Card/Card.vue"
 import CardItem from "@/components/Card/CardItem.vue"
-import { reactive } from "vue"
-
-const dev100 = reactive<any[]>([
-  {
-    id:1,
-    title:'Masonry Layouts',
-    desc:'Practice of waterfall layout',
-    path:''
-  }
-])
 
 </script>
 
@@ -21,11 +11,12 @@ const dev100 = reactive<any[]>([
       <img class='w-48 h-24' src="/dev100.png" alt="dev100" />
     </div>
 
-    <div>
+    <div class="flex justify-center flex-wrap">
       <Card>
-        <template v-for="item,index in dev100" :key="index">
-          <CardItem :path="item.path" :id="item.id" :desc="item.desc" :title="item.title" />
-        </template>
+          <CardItem id="DEV001" title="Waterfall layout" />
+          <CardItem id="DEV002" title="lazy loading" />
+          <CardItem id="DEV003" title="none" />
+          <CardItem id="DEV004" title="hello github" />
       </Card>
     </div>
 
