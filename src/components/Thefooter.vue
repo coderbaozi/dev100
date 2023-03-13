@@ -9,10 +9,6 @@ function getTheme(){
   if(theme.value === 'light') return themeicon
   return themeicon = 'ph:cloud-moon'
 }
-
-function toGithub() {
-
-}
 </script>
 
 <template>

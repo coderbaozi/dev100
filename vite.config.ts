@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [vue(),WindiCSS(),Pages({
     dirs: [
       {dir:'src/views',baseRoute:''},
-      {dir: 'src/views/hi', baseRoute: 'hi'}
+      {dir: 'src/components/dev100', baseRoute: 'dev100'}
     ],
     extensions: ['vue'],
   }

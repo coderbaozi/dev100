@@ -7,16 +7,17 @@ import CardItem from "@/components/Card/CardItem.vue"
 
 <template>
   <div class="home">
+
     <div class="logo">
       <img class='w-48 h-24' src="/dev100.png" alt="dev100" />
     </div>
 
     <div class="flex justify-center flex-wrap">
       <Card>
-          <CardItem id="DEV001" title="Waterfall layout" />
-          <CardItem id="DEV002" title="lazy loading" />
-          <CardItem id="DEV003" title="none" />
-          <CardItem id="DEV004" title="hello github" />
+          <CardItem id="DEV001" title="Waterfall layout" path="/dev100/waterfall"/>
+          <CardItem id="DEV002" title="lazy loading" path="#" />
+          <CardItem id="DEV003" title="none" path="'/'"/>
+          <CardItem id="DEV004" title="hello github" path="'/'" />
       </Card>
     </div>
 
