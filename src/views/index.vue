@@ -15,7 +15,7 @@ import CardItem from "@/components/Card/CardItem.vue"
     <div class="flex justify-center flex-wrap">
       <Card>
           <CardItem id="DEV001" title="Waterfall layout" path="/dev100/waterfall"/>
-          <CardItem id="DEV002" title="lazy loading" path="#" />
+          <CardItem id="DEV002" title="lazy loading" path="/dev100/lazyLoading" />
           <CardItem id="DEV003" title="none" path="'/'"/>
           <CardItem id="DEV004" title="hello github" path="'/'" />
       </Card>
