@@ -16,8 +16,8 @@ import CardItem from "@/components/Card/CardItem.vue"
       <Card>
           <CardItem id="DEV001" title="Waterfall layout" path="/dev100/waterfall"/>
           <CardItem id="DEV002" title="lazy loading" path="/dev100/lazyLoading" />
-          <CardItem id="DEV003" title="none" path="'/'"/>
-          <CardItem id="DEV004" title="hello github" path="'/'" />
+          <CardItem id="DEV003" title="debounce.js" path="/dev100/debounce"/>
+          <CardItem id="DEV004" title="throttle.js" path="/dev100/throttle" />
       </Card>
     </div>
 
