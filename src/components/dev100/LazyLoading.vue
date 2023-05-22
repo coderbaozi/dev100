@@ -5,7 +5,7 @@ import DevLayout from '../layout/devLayout.vue';
 const lazyIntersection = new IntersectionObserver(entiers => {
   // entires is Array monitored
   entiers.forEach((item) => {
-    if(item.isIntersecting){
+    if (item.isIntersecting) {
       const imgElement: HTMLImageElement = item.target as HTMLImageElement
       imgElement.src = item.target.getAttribute('data-img') as string
       lazyIntersection.unobserve(item.target)
@@ -29,10 +29,10 @@ const imgUrl = [
   'https://i.328888.xyz/2023/03/16/Kx3qv.jpeg',
   'https://i.328888.xyz/2023/03/16/Kxc23.jpeg']
 
-  
-nextTick(()=>{
+
+nextTick(() => {
   let data = Array.from(document.getElementsByTagName('img'))
-  data.forEach(item=>{
+  data.forEach(item => {
     lazyIntersection.observe(item)
   })
 })
@@ -41,7 +41,7 @@ nextTick(()=>{
 <template>
   <dev-layout title="lazy Loading">
     <div class="grid grid-cols-2 gap-5">
-      <div v-for="item,index in imgUrl" :key="index" class="overflow-hidden rounded-lg shadow transition">
+      <div v-for="item, index in imgUrl" :key="index" class="overflow-hidden rounded-lg shadow transition">
         <img class="h-56 w-full object-cover" :src="placeholderImg" :data-img="item" alt="" />
         <div class="bg-white p-4">
           <h3 class="mt-0.5 text-lg text-gray-900">LazyLoading</h3>

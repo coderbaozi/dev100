@@ -1,6 +1,8 @@
 <template>
-  <dev-layout>
-    <div class="w-20 h-20">waterfall</div>
+  <dev-layout round>
+    <template #Round>
+      <div class="w-full text-center h-20">404</div>
+    </template>
   </dev-layout>
 </template>
 
@@ -8,6 +10,4 @@
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
