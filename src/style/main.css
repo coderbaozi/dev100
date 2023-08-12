@@ -1,0 +1,10 @@
+.message-container {
+  display: flex;
+  width: 400px;
+  flex-wrap: wrap;
+  position: fixed;
+  left: 50%;
+  gap:20px;
+  margin-left: -150px;
+  top: 25px;
+}
