@@ -54,7 +54,11 @@ const cards = [{
   title: "Message",
   path: "/dev100/IMessage"
 },
-
+{
+  id: `DEV${(id++).toString().padStart(3, '0')}`,
+  title: "Congratulate",
+  path: "/dev100/Congratulate"
+},
 ]
 
 </script>
