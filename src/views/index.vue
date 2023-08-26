@@ -59,6 +59,11 @@ const cards = [{
   title: "Congratulate",
   path: "/dev100/Congratulate"
 },
+{
+  id: `DEV${(id++).toString().padStart(3, '0')}`,
+  title: "VirtualList",
+  path: "/dev100/VirtualList"
+},
 ]
 
 </script>

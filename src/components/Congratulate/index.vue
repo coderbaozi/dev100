@@ -9,7 +9,7 @@ interface CanvasContext {
   height: number
   canvas: HTMLCanvasElement
   ctx: CanvasRenderingContext2D
-  parts?: Parts[]
+  parts?: Parts[],
 }
 
 interface Parts {
@@ -30,7 +30,6 @@ function resolveContext(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D
       canvas,
       ctx: ctx,
     }
-    context.parts = initParts(context)
   }
   return context
 }
@@ -48,8 +47,8 @@ function randomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min) + min)
 }
 
-function initParts(context: CanvasContext) {
-  const { width, height } = context
+function initParts() {
+  const { width, height } = context!
   const parts = []
   for (let i = 0; i < 100; i++) {
     parts.push({
@@ -65,28 +64,33 @@ function initParts(context: CanvasContext) {
   return parts
 }
 
-function draw(context: CanvasContext) {
-  const { width, height, ctx, parts } = context
+function draw() {
+  const { width, height, ctx, parts } = context!
   ctx.clearRect(0, 0, width, height)
   parts?.forEach(part => {
     ctx.beginPath()
     ctx.rect(part.x, part.y, part.width, part.height);
     ctx.fillStyle = part.color;
     ctx.fill();
-    part.x += part.dx;
-    part.y += part.dy;
+    part.x += part.dx
+    part.y += part.dy
   })
-  // @ts-expect-error
   requestAnimationFrame(draw)
 }
+
 onMounted(() => {
   const canvas = document.getElementById('canvas') as HTMLCanvasElement
   const { ctx } = initCanvas(canvas) as { ctx: CanvasRenderingContext2D }
   resolveContext(canvas, ctx)
 })
+
+function handleDrawClick() {
+  context!.parts = initParts()
+  draw()
+}
 </script>
 
 <template>
-  <div @click="() => draw(context!)">trigger</div>
+  <div @click="handleDrawClick">trigger</div>
   <canvas id="canvas"></canvas>
 </template>
