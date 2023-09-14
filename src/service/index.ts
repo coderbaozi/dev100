@@ -9,16 +9,16 @@ const fetcher = new Request({
     requestSuccessFn: (config) => {
       return config
     },
-    requestFilureFn: (err :any) => {
+    requestFilureFn: (err: any) => {
       return err
     },
-    responseSuccessFn: (res :any) => {
+    responseSuccessFn: (res: any) => {
       return res
     },
     responseFilureFn: (err: any) => {
       return err
-    }
-  }
+    },
+  },
 })
 
 export default fetcher

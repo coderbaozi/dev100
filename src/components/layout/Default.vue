@@ -1,11 +1,11 @@
-<template>
-  <div class="layout-default dark:bg-black" >
-    <slot></slot>
-  </div>
-</template>
-
 <script lang='ts' setup>
 </script>
+
+<template>
+  <div class="layout-default dark:bg-black">
+    <slot />
+  </div>
+</template>
 
 <style scoped>
 .layout-default {

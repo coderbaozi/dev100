@@ -6,6 +6,8 @@
     "dev": "vite",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
+    "lint": "eslint ./src",
+    "lint-fixed": "eslint ./src --fix",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit"
   },
@@ -18,10 +20,12 @@
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.42.0",
     "@iconify/vue": "^4.1.0",
     "@types/node": "^18.14.2",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/tsconfig": "^0.1.3",
+    "eslint": "^8.49.0",
     "npm-run-all": "^4.1.5",
     "typescript": "~4.8.4",
     "unplugin-vue-router": "^0.6.4",

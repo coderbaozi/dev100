@@ -1,5 +1,5 @@
-import fetcher from "../index"
+import fetcher from '../index'
 
 export async function testRequest() {
-  return await fetcher.get({url:``})
+  return await fetcher.get({ url: '' })
 }

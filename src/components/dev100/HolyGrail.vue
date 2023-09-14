@@ -1,9 +1,15 @@
 <template>
   <dev-layout>
     <div class="container">
-      <div class="center">center</div>
-      <div class="left">left</div>
-      <div class="right">right</div>
+      <div class="center">
+        center
+      </div>
+      <div class="left">
+        left
+      </div>
+      <div class="right">
+        right
+      </div>
     </div>
   </dev-layout>
 </template>

@@ -1,7 +1,7 @@
-import router from "@/router/index"
+import router from '@/router/index'
 
 function backHome() {
-  router.push({path: '/' })
+  router.push({ path: '/' })
 }
 
 function useBackHome() {

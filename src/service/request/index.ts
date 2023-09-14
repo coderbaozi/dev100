@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import type { AxiosInstance } from 'axios'
 import type { powerRequestConfig } from './type'
 
 class Request {
@@ -16,23 +16,22 @@ class Request {
       },
       (err) => {
         return err
-      }
+      },
     )
 
     this.instance.interceptors.response.use(
       (res) => {
-        // destruct axiosResponse one floor  
+        // destruct axiosResponse one floor
         return res.data
       },
       (err) => {
         return err
-      }
+      },
     )
 
     // add unique interceptors for every axios instance
     this.instance.interceptors.request.use(config.interceptors?.requestSuccessFn, config.interceptors?.requestFilureFn)
-    this.instance.interceptors.response.use(config.interceptors?.responseSuccessFn,config.interceptors?.responseFilureFn)
-    
+    this.instance.interceptors.response.use(config.interceptors?.responseSuccessFn, config.interceptors?.responseFilureFn)
   }
 
   // fetch data method wrapper
@@ -43,9 +42,9 @@ class Request {
         .request<any, T>(config)
         .then((res) => {
           // execute single interceptors function
-          if (config.interceptors?.responseSuccessFn) {
+          if (config.interceptors?.responseSuccessFn)
             res = config.interceptors.responseSuccessFn(res)
-          }
+
           resolve(res)
         })
         .catch((err) => {

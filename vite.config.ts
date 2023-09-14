@@ -1,4 +1,4 @@
-import { fileURLToPath, URL } from 'node:url'
+import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import WindiCSS from 'vite-plugin-windicss'
 import vue from '@vitejs/plugin-vue'
@@ -9,14 +9,14 @@ export default defineConfig({
   plugins: [vue(), WindiCSS(), VueRouter({
     routesFolder: [
       { src: 'src/views', path: '' },
-      { src: 'src/components/dev100', path: 'dev100/' }
+      { src: 'src/components/dev100', path: 'dev100/' },
     ],
     extensions: ['.vue'],
-  }
+  },
   )],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
 })

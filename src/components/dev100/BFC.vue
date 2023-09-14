@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 </script>
+
 <template>
   <dev-layout>
     <Show>
@@ -14,18 +15,19 @@
 
       <body>
         <p>bfc margin flod </p>
-        <div></div>
-        <div></div>
+        <div />
+        <div />
       </body>
     </Show>
     <Show>
       <p>清除浮动</p>
       <div style="border: 1px solid #000;overflow: hidden">
-        <div style="width: 100px;height: 100px;background: #eee;float: left;"></div>
+        <div style="width: 100px;height: 100px;background: #eee;float: left;" />
       </div>
     </Show>
   </dev-layout>
 </template>
+
 <style scoped>
 div {
   width: 100px;

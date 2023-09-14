@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import DevLayout from '../layout/devLayout.vue';
+import DevLayout from '../layout/devLayout.vue'
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 function debounce(fn: Function, delay: number) {
   let timeoutId: number
 
   return function (...args: any[]) {
-    if (timeoutId) {
+    if (timeoutId)
       clearTimeout(timeoutId)
-    }
 
     timeoutId = setTimeout(() => {
       fn(args)
@@ -23,19 +23,20 @@ function addDom() {
 }
 
 const handleDebounceRes = debounce(addDom, 1000)
-
 </script>
+
 <template>
-  <dev-layout round>
+  <DevLayout round>
     <template #Round>
       <div class="flex justify-center items-center flex-col w-full">
-        <button @click="handleDebounceRes" class="font-serif border border-gray- p-2">addDomElement</button>
+        <button class="font-serif border border-gray- p-2" @click="handleDebounceRes">
+          addDomElement
+        </button>
         <code>Multiple clicks are executed only once</code>
         <div id="debounce" class="border border-green-500 p-4 m-10">
           <span>hi~ debounce</span>
         </div>
       </div>
     </template>
-
-  </dev-layout>
+  </DevLayout>
 </template>

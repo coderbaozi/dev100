@@ -6,8 +6,8 @@ div.setAttribute('class', 'message-container')
 document.body.appendChild(div)
 
 interface MessageProps {
-  text: string,
-  type: string,
+  text: string
+  type: string
   delay?: number
 }
 

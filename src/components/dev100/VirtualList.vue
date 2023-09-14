@@ -4,5 +4,5 @@ import { virtualListData } from '../../api/virtualList'
 </script>
 
 <template>
-  <VirtualList :list-data="virtualListData"></VirtualList>
+  <VirtualList :list-data="virtualListData" />
 </template>

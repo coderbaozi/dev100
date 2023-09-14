@@ -1,24 +1,22 @@
 <script  lang="ts" setup>
-import { ref, computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import type { ListData } from '../../api/virtualList'
 
+const props = defineProps({
+  listData: {
+    type: Array<ListData>,
+    default: () => [],
+  },
+  itemSize: {
+    type: Number,
+    default: 200,
+  },
+})
 const screenHeight = ref(0)
 const start = ref(0)
 const end = ref(0)
 const ContinerRef = ref<HTMLDivElement>()
 const currentOffset = ref(0)
-
-
-const props = defineProps({
-  listData: {
-    type: Array<ListData>,
-    default: () => []
-  },
-  itemSize: {
-    type: Number,
-    default: 200
-  }
-})
 
 // 列表总高度
 const listHeight = computed(() => props.listData.length * props.itemSize)
@@ -34,21 +32,22 @@ onMounted(() => {
 
 function handleScroll(e: any) {
   // 记录当前滚动位置
-  let scrollTop = e.target.scrollTop
+  const scrollTop = e.target.scrollTop
   start.value = ~~(scrollTop / props.itemSize)
   end.value = start.value + visibleCount.value
   // TODO: let me see see
   currentOffset.value = scrollTop - (scrollTop % props.itemSize)
 }
-
 </script>
 
 <template>
-  <div @scroll="handleScroll" class="container" ref="ContinerRef">
-    <div class="phantom" :style="{ height: listHeight + 'px' }"></div>
+  <div ref="ContinerRef" class="container" @scroll="handleScroll">
+    <div class="phantom" :style="{ height: `${listHeight}px` }" />
     <div class="content" :style="{ transform: `translate3d(0, ${currentOffset}px, 0)` }">
-      <div v-for="item in visibleData" :key="item.id" class="list-item"
-        :style="{ height: itemSize + 'px', lineHeight: itemSize + 'px' }">
+      <div
+        v-for="item in visibleData" :key="item.id" class="list-item"
+        :style="{ height: `${itemSize}px`, lineHeight: `${itemSize}px` }"
+      >
         {{ item.username }}
       </div>
     </div>

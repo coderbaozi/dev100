@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { nextTick } from 'vue';
-import DevLayout from '../layout/devLayout.vue';
+import { nextTick } from 'vue'
+import DevLayout from '../layout/devLayout.vue'
 
-const lazyIntersection = new IntersectionObserver(entiers => {
+const lazyIntersection = new IntersectionObserver((entiers) => {
   // entires is Array monitored
   entiers.forEach((item) => {
     if (item.isIntersecting) {
@@ -29,25 +29,28 @@ const imgUrl = [
   'https://i.328888.xyz/2023/03/16/Kx3qv.jpeg',
   'https://i.328888.xyz/2023/03/16/Kxc23.jpeg']
 
-
 nextTick(() => {
-  let data = Array.from(document.getElementsByTagName('img'))
-  data.forEach(item => {
+  const data = Array.from(document.getElementsByTagName('img'))
+  data.forEach((item) => {
     lazyIntersection.observe(item)
   })
 })
 </script>
 
 <template>
-  <dev-layout title="lazy Loading">
+  <DevLayout title="lazy Loading">
     <div class="grid grid-cols-2 gap-5">
       <div v-for="item, index in imgUrl" :key="index" class="overflow-hidden rounded-lg shadow transition">
-        <img class="h-56 w-full object-cover" :src="placeholderImg" :data-img="item" alt="" />
+        <img class="h-56 w-full object-cover" :src="placeholderImg" :data-img="item" alt="">
         <div class="bg-white p-4">
-          <h3 class="mt-0.5 text-lg text-gray-900">LazyLoading</h3>
-          <p class="mt-2 text-sm  text-gray-500">contrigulations</p>
+          <h3 class="mt-0.5 text-lg text-gray-900">
+            LazyLoading
+          </h3>
+          <p class="mt-2 text-sm  text-gray-500">
+            contrigulations
+          </p>
         </div>
       </div>
     </div>
-  </dev-layout>
+  </DevLayout>
 </template>

@@ -9,12 +9,15 @@ export function useScroll() {
       render(vnode, continer.value)
       bottom = document.getElementById('bottom') as HTMLDivElement
     }
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           fn()
+          // eslint-disable-next-line no-console
           console.log('元素出现')
-        } else {
+        }
+        else {
+          // eslint-disable-next-line no-console
           console.log('元素隐藏')
         }
       })

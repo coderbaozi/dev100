@@ -1,17 +1,17 @@
 import { defineStore } from 'pinia'
-import { testRequest } from "@/service/__test__/test";
+import { testRequest } from '@/service/__test__/test'
 
-const useTestStore = defineStore('test',{
+const useTestStore = defineStore('test', {
 
-  state: ():any => {
-    return { testData:null}
+  state: (): any => {
+    return { testData: null }
   },
 
-  actions:{
+  actions: {
     async testAction() {
       this.testData = await testRequest()
-    }
-  }
+    },
+  },
 })
 
 export default useTestStore

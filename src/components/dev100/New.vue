@@ -5,7 +5,7 @@
   <dev-layout round>
     <template #Round>
       <div class="w-full text-center h-20">
-        <img src="@/assets/new.png" />
+        <img src="@/assets/new.png">
         <p class="prose">
           - 创建一个空的简单JavaScript对象（即{}）
           链接该对象（即设置该对象的构造函数）到另一个对象
