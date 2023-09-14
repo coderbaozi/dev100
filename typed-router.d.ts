@@ -54,6 +54,7 @@ declare module 'vue-router/auto/routes' {
     '/dev100/LazyLoading': RouteRecordInfo<'/dev100/LazyLoading', '/dev100/LazyLoading', Record<never, never>, Record<never, never>>,
     '/dev100/New': RouteRecordInfo<'/dev100/New', '/dev100/New', Record<never, never>, Record<never, never>>,
     '/dev100/Prototype': RouteRecordInfo<'/dev100/Prototype', '/dev100/Prototype', Record<never, never>, Record<never, never>>,
+    '/dev100/Sse': RouteRecordInfo<'/dev100/Sse', '/dev100/Sse', Record<never, never>, Record<never, never>>,
     '/dev100/Throttle': RouteRecordInfo<'/dev100/Throttle', '/dev100/Throttle', Record<never, never>, Record<never, never>>,
     '/dev100/VirtualList': RouteRecordInfo<'/dev100/VirtualList', '/dev100/VirtualList', Record<never, never>, Record<never, never>>,
     '/dev100/Waterfall': RouteRecordInfo<'/dev100/Waterfall', '/dev100/Waterfall', Record<never, never>, Record<never, never>>,
